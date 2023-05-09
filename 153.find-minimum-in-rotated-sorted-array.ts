@@ -14,7 +14,7 @@ function findMin(nums: number[]): number {
   }
 
   while (start < end) {
-    let mid = Math.floor((start + end) / 2)
+    const mid = Math.floor((start + end) / 2)
 
     if (nums[mid] > nums[end]) {
       start = mid + 1
