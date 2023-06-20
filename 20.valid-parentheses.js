@@ -23,8 +23,8 @@ var isValid = function (s) {
     if (openBrackets.includes(s[i])) {
       bracketStack.push(s[i]);
     } else {
-      let lastEle = bracketStack.pop();
-      if (brackets[lastEle] !== s[i]) return false;
+      let last = bracketStack.pop();
+      if (brackets[last] !== s[i]) return false;
     }
   }
 
