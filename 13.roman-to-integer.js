@@ -12,7 +12,7 @@
 const romanToInt = (s) => {
   if (s.length === 0) {
     return 0;
-  }
+  };
 
   const map = new Map([
     ['I', 1],
@@ -34,7 +34,7 @@ const romanToInt = (s) => {
     prev >= curr ? (result += prev) : (result -= prev);
 
     i--;
-  }
+  };
 
   return result;
 };
