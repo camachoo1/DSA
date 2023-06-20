@@ -27,6 +27,6 @@ const dfs = (root, target) => {
   if (!root || !target) return false;
   if (root.val !== target.val) return false;
 
-  return dfs(root.left, target.right) && dfs(root.right, target.left);
+  return dfs(root.left, target.right) && dfs(root.right, target.left)
 };
 // @lc code=end
