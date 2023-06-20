@@ -15,9 +15,9 @@ var isPalindrome = function (s) {
   const longStr = s.replace(/[^a-z0-9]/gi, '').toLowerCase()
 
   if (longStr === longStr.split('').reverse().join('')) {
-    return true
+    return true;
   } else {
-    return false
+    return false;
   }
 };
 // @lc code=end
