@@ -6,7 +6,7 @@
 
 // @lc code=start
 function containsDuplicate(nums: number[]): boolean {
-  const numMap = new Map<number, number>();
+  const numMap = new Map<number, number>()
 
   for (let i = 0; i < nums.length; i++) {
     if (numMap.has(nums[i])) {
