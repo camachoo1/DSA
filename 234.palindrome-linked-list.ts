@@ -22,8 +22,6 @@ function isPalindrome(head: ListNode | null): boolean {
     return true
   }
 
-  
-
   let slow = head
   let fast = head
 
