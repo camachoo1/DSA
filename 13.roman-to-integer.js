@@ -31,7 +31,11 @@ const romanToInt = (s) => {
     const curr = map.get(s[i]);
     const prev = map.get(s[i - 1]);
 
-    prev >= curr ? (result += prev) : (result -= prev);
+    if (prev >= curr) {
+      (result += prev)
+    } else {
+      (result -= prev)
+    }
 
     i--;
   };
