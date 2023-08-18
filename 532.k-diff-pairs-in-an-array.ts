@@ -6,21 +6,20 @@
 
 // @lc code=start
 function findPairs(nums: number[], k: number): number {
-  const seen = new Set<number>()
-  const uniquePairs = new Set<number>()
+  const seen = new Set<number>();
+  const uniquePairs = new Set<number>();
 
   for (const num of nums) {
     if (seen.has(num - k)) {
-      uniquePairs.add(num - k)
+      uniquePairs.add(num - k);
     }
 
     if (seen.has(num + k)) {
-      uniquePairs.add(num)
+      uniquePairs.add(num);
     }
-    seen.add(num)
+    seen.add(num);
   }
 
-  return uniquePairs.size
+  return uniquePairs.size;
 }
 // @lc code=end
-
