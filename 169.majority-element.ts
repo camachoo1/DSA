@@ -8,12 +8,11 @@
 function majorityElement(nums: number[]): number {
   const hash: {[key: number]: number} = {}
 
-  for (let i = 0; i < nums.length; i++) {
-    
-    if (hash[nums[i]]) {
-      hash[nums[i]]++
+  for (const num of nums) {
+    if (hash[num]) {
+      hash[num]++
     } else {
-      hash[nums[i]] = 1
+      hash[num] = 1
     }
   }
 
