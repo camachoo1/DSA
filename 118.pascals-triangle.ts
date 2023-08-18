@@ -6,25 +6,23 @@
 
 // @lc code=start
 function generate(numRows: number): number[][] {
-  const res: number[][] = []
+  const res: number[][] = [];
 
   for (let i = 0; i < numRows; i++) {
-    const row: number[] = []
+    const row: number[] = [];
 
     for (let j = 0; j <= i; j++) {
       if (j === 0 || j === i) {
-        row.push(1)
+        row.push(1);
       } else {
-        const previousRow = res[i - 1]
-        const newValue = previousRow[j - 1] + previousRow[j]
-        row.push(newValue)
+        const previousRow = res[i - 1];
+        const newValue = previousRow[j - 1] + previousRow[j];
+        row.push(newValue);
       }
     }
-    res.push(row)
-    
+    res.push(row);
   }
 
-  return res
-};
+  return res;
+}
 // @lc code=end
-
