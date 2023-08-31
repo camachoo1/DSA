@@ -9,16 +9,15 @@
  Do not return anything, modify nums in-place instead.
  */
 function moveZeroes(nums: number[]): void {
-  let count = 0
+  let count = 0;
   for (const num of nums) {
     if (num !== 0) {
-      nums[count++] = num
+      nums[count++] = num;
     }
   }
 
   for (let i = count; i < nums.length; i++) {
-    nums[i] = 0
+    nums[i] = 0;
   }
-};
+}
 // @lc code=end
-
