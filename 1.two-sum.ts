@@ -15,6 +15,6 @@ function twoSum(nums: number[], target: number): number[] {
     map.set(target - nums[i], i)
   }
   return []
-};
+}
 // @lc code=end
 
