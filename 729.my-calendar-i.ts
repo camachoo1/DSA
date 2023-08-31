@@ -6,21 +6,21 @@
 
 // @lc code=start
 class MyCalendar {
-    events: [number, number][]
-    constructor() {
-        this.events = []
+  events: [number, number][];
+  constructor() {
+    this.events = [];
+  }
+
+  book(start: number, end: number): boolean {
+    for (const [s, e] of this.events) {
+      if (start < e && end > s) {
+        return false;
+      }
     }
 
-    book(start: number, end: number): boolean {
-        for (const [s, e] of this.events) {
-            if (start < e && end > s) {
-                return false
-            }
-        }
-
-        this.events.push([start, end])
-        return true
-    }
+    this.events.push([start, end]);
+    return true;
+  }
 }
 
 /**
@@ -29,4 +29,3 @@ class MyCalendar {
  * var param_1 = obj.book(start,end)
  */
 // @lc code=end
-
