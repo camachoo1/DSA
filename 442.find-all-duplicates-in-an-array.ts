@@ -19,5 +19,5 @@ function findDuplicates(nums: number[]): number[] {
   return Object.keys(duplicates)
     .filter((key) => duplicates[key] === 2)
     .map(Number);
-}
+};
 // @lc code=end
