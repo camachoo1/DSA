@@ -19,45 +19,43 @@
 
 function isPalindrome(head: ListNode | null): boolean {
   if (head === null || (head.next === null && head.val !== null)) {
-    return true
+    return true;
   }
 
-  let slow = head
-  let fast = head
+  let slow = head;
+  let fast = head;
 
   while (fast.next !== null && fast.next.next !== null) {
-    slow = slow.next
-    fast = fast.next.next
+    slow = slow.next;
+    fast = fast.next.next;
   }
 
-  let secondHalf = reverseNodeList(slow.next)
-  let firstHalf = head
+  let secondHalf = reverseNodeList(slow.next);
+  let firstHalf = head;
 
   while (secondHalf !== null) {
     if (firstHalf.val !== secondHalf.val) {
-      return false
+      return false;
     }
 
-    firstHalf = firstHalf.next
-    secondHalf = secondHalf.next
+    firstHalf = firstHalf.next;
+    secondHalf = secondHalf.next;
   }
 
-  return true
-};
-
+  return true;
+}
 
 function reverseNodeList(head: ListNode | null): ListNode | null {
-  let prev = null
-  let current = head
+  let prev = null;
+  let current = head;
 
   while (current !== null) {
-    let next = current.next
-    current.next = prev
-    prev = current
-    current = next
+    let next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
   }
 
-  return prev
+  return prev;
 }
 // @lc code=end
-
