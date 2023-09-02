@@ -9,23 +9,23 @@
  * @param {number[]} nums
  * @return {number}
  */
-var singleNumber = function(nums) {
-  const hash = {}
-  
-  for (let i = 0; i < nums.length; i++) { 
+var singleNumber = function (nums) {
+  const hash = {};
+
+  for (let i = 0; i < nums.length; i++) {
     if (nums[i] in hash) {
-      hash[nums[i]]++
+      hash[nums[i]]++;
     } else {
-      hash[nums[i]] = 1
+      hash[nums[i]] = 1;
     }
   }
 
   for (let num in hash) {
     if (hash[num] === 1) {
-      return num
+      return num;
     }
   }
 };
 // @lc code=end
 
-singleNumber([2,2,1])
+singleNumber([2, 2, 1]);
