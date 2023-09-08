@@ -11,34 +11,33 @@ function longestPalindrome(s: string): string {
   let longestStr = '';
 
   for (let i = 0; i < s.length; i++) {
-    let left = i
-    let right = i
+    let left = i;
+    let right = i;
 
     while (left >= 0 && right < s.length && s[left] === s[right]) {
-      const currLength = right - left + 1
+      const currLength = right - left + 1;
 
       if (currLength > longestLength) {
-        longestLength = currLength
-        longestStr = s.slice(left, right + 1)
+        longestLength = currLength;
+        longestStr = s.slice(left, right + 1);
       }
-      left--
+      left--;
       right++;
     }
 
-    left = i
-    right = i + 1
+    left = i;
+    right = i + 1;
     while (left >= 0 && right < s.length && s[left] === s[right]) {
-      const currLength = right - left + 1
+      const currLength = right - left + 1;
 
       if (currLength > longestLength) {
-        longestLength = currLength
-        longestStr = s.slice(left, right + 1)
+        longestLength = currLength;
+        longestStr = s.slice(left, right + 1);
       }
-      left--
-      right++
+      left--;
+      right++;
     }
   }
   return longestStr;
 }
 // @lc code=end
-
