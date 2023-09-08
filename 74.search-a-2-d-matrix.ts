@@ -36,4 +36,3 @@ const binarySearch = (nums: number[], target: number): boolean => {
   return false;
 };
 // @lc code=end
-
