@@ -6,19 +6,18 @@
 
 // @lc code=start
 function lengthOfLastWord(s: string): number {
-  let length = 0
-  let started = false
+  let length = 0;
+  let started = false;
 
   for (let i = s.length - 1; i >= 0; i--) {
     if (s[i] !== ' ') {
-      length++
-      started = true
+      length++;
+      started = true;
     } else if (started) {
-      break
+      break;
     }
   }
 
-  return length
-};
+  return length;
+}
 // @lc code=end
-
