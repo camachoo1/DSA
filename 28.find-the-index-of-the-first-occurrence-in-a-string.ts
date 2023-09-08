@@ -6,14 +6,13 @@
 
 // @lc code=start
 function strStr(haystack: string, needle: string): number {
-  let index = -1
+  let index = -1;
 
   if (haystack.indexOf(needle) === -1) {
-    return index
+    return index;
   } else {
-    index = haystack.indexOf(needle)
-    return index
+    index = haystack.indexOf(needle);
+    return index;
   }
-};
+}
 // @lc code=end
-
