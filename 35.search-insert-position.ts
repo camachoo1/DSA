@@ -6,7 +6,6 @@
 
 // @lc code=start
 function searchInsert(nums: number[], target: number): number {
-
   let start = 0;
   let end = nums.length - 1;
 
@@ -22,7 +21,6 @@ function searchInsert(nums: number[], target: number): number {
     }
   }
 
-  return start
-};
+  return start;
+}
 // @lc code=end
-
