@@ -6,8 +6,7 @@
 
 // @lc code=start
 function reverseWords(s: string): string {
-  const trimmed = s.trim().split(/\s+/)
-  return trimmed.reverse().join(' ')
-};
+  const trimmed = s.trim().split(/\s+/);
+  return trimmed.reverse().join(' ');
+}
 // @lc code=end
-
