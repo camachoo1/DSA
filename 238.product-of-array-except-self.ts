@@ -11,21 +11,20 @@ function productExceptSelf(nums: number[]): number[] {
   const right: number[] = new Array(n);
   const answer: number[] = new Array(n);
 
-  left[0] = 1
+  left[0] = 1;
   for (let i = 1; i < n; i++) {
-    left[i] = left[i - 1] * nums[i - 1]
-  };
+    left[i] = left[i - 1] * nums[i - 1];
+  }
 
-  right[n - 1] = 1
+  right[n - 1] = 1;
   for (let i = n - 2; i >= 0; i--) {
-    right[i] = right[i + 1] * nums[i + 1]
-  };
+    right[i] = right[i + 1] * nums[i + 1];
+  }
 
   for (let i = 0; i < n; i++) {
-    answer[i] = left[i] * right[i]
-  };
+    answer[i] = left[i] * right[i];
+  }
 
-  return answer
-};
+  return answer;
+}
 // @lc code=end
-
