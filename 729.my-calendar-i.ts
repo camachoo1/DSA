@@ -21,7 +21,7 @@ class MyCalendar {
     this.events.push([start, end]);
     return true;
   }
-}
+};
 
 /**
  * Your MyCalendar object will be instantiated and called as such:
