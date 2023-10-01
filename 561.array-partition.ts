@@ -15,5 +15,5 @@ function arrayPairSum(nums: number[]): number {
   }
 
   return maxSum;
-}
+};
 // @lc code=end
