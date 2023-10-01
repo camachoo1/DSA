@@ -25,5 +25,5 @@ function checkPossibility(nums: number[]): boolean {
   }
 
   return true;
-}
+};
 // @lc code=end
