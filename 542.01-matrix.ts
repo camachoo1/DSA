@@ -19,6 +19,7 @@ function updateMatrix(mat: number[][]): number[][] {
     [-1, 0],
     [0, -1],
   ];
+  
   let queue: MatrixParams[] = [];
   let visited: boolean[][] = Array(ROWS)
     .fill(false)
