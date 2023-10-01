@@ -50,5 +50,5 @@ function orangesRotting(grid: number[][]): number {
     }
   }
   return oranges ? -1 : minute;
-}
+};
 // @lc code=end
