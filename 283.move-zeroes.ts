@@ -19,5 +19,5 @@ function moveZeroes(nums: number[]): void {
   for (let i = count; i < nums.length; i++) {
     nums[i] = 0;
   }
-}
+};
 // @lc code=end
