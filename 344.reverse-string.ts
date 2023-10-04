@@ -10,5 +10,5 @@
  */
 function reverseString(s: string[]): void {
   s.reverse();
-}
+};
 // @lc code=end
