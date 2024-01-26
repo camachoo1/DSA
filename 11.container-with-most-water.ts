@@ -19,11 +19,7 @@ function maxArea(height: number[]): number {
 
     maxArea = Math.max(maxArea, area);
 
-    if (height[left] < height[right]) {
-      left++;
-    } else {
-      right--;
-    }
+    height[left] < height[right] ? left++ : right--;
   }
 
   return maxArea;
