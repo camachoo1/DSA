@@ -9,29 +9,34 @@
 
 class Solution:
     def orangesRotting(self, grid: List[List[int]]) -> int:
-        minutes, oranges = 0, 0
-        queue = deque()
-        dirs = [(1, 0), (0, 1), (-1, 0), (0, -1)]
-        
-        for row in range(len(grid)):
-            for col in range(len(grid[0])):
-                if grid[row][col] == 1:
-                    oranges += 1
-                elif grid[row][col] == 2:
-                    queue.append({"row": row, "col": col, "minute": 0})
-        
-        while len(queue) > 0:
-            item = queue.popleft()
-            row, col, minute = item["row"], item["col"], item["minute"]
-            minutes = max(minutes, minute)
-            for x, y in dirs:
-                dx, dy = row + x, col + y
-                if self.inbounds(dx, dy, grid) and grid[dx][dy] == 1:
-                    grid[dx][dy] = 2
-                    oranges -= 1
-                    queue.append({"row": dx, "col": dy, "minute": minute + 1})
-        
-        return -1 if oranges > 0 else minutes
+        rows = len(grid)
+        if rows == 0:
+            return -1
 
-    def inbounds(self, row, col, grid):
-        return 0 <= row < len(grid) and 0 <= col < len(grid[0])
+        cols = len(grid[0])
+        fresh_oranges = 0
+        rotten_oranges = collections.deque()
+
+        for r in range(rows):
+            for c in range(cols):
+                if grid[r][c] == 2:
+                    rotten_oranges.append((r, c))
+                elif grid[r][c] == 1:
+                    fresh_oranges += 1
+
+        minutes = 0
+        while rotten_oranges and fresh_oranges > 0:
+            minutes += 1
+
+            for _ in range(len(rotten_oranges)):
+                r1, c1 = rotten_oranges.popleft()
+                for x, y in [(1, 0), (0, 1), (-1, 0), (0, -1)]:
+                    dx, dy = r1 + x, c1 + y
+                    if dx < 0 or dx == rows or dy < 0 or dy == cols:
+                        continue
+                    if grid[dx][dy] == 0 or grid[dx][dy] == 2:
+                        continue
+                    fresh_oranges -= 1
+                    grid[dx][dy] = 2
+                    rotten_oranges.append((dx, dy))
+        return minutes if fresh_oranges == 0 else -1
